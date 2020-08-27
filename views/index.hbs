@@ -1,0 +1,60 @@
+<div class="container">
+  <!-- Header -->
+
+  <div class="container">
+    <nav class="div d-flex justify-content-between mt-2 pb-1 border-bottom">
+      <div class="box d-inline-block">
+        <a style="font-family: 'Poppins', sans-serif; letter-spacing: -1px;"
+           class="navbar-brand text-dark p-0"
+           href="#">
+          Wizard Shop
+        </a>
+      </div>
+
+      <div class="box d-inline-flex">
+        <div class="">
+          <a class="btn btn-outline-warning p-1 m-1 btn btn-outline-success header-link pl-3 pr-3" href="#">
+            CATÁLOGO
+          </a>
+        </div>
+        <div class="">
+          <a class="btn btn-outline-dark p-1 m-1 header-link pl-3 pr-3" href="#">
+            INGRESAR
+          </a>
+        </div>
+        <div class="">
+          <a class="d-inline-block pt-2 pb-2 pl-2 pr-2 header-link text-dark" href="#">
+            <i style="font-size: 1rem;" class="fas fa-bars"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Presentation Side -->
+  <div class="container">
+    <div class="container">
+      <div class="row pt-5">
+        {{# each items }}
+        <div class="col-md-4 pt-2">
+          <div class="card mx-auto" style="width: 200px; min-height: 358.8px;">
+            <div class="p-3" style="">
+              <img class="card-img-top" src="{{ this.productImage }}" alt="img-polera">
+            </div>
+
+            <div class="card-body">
+              <h4 class="card-title">
+                {{ this.name }}
+              </h4>
+              <p class="card-text font-weight-bold">
+                ${{ this.price }}
+              </p>
+              <a href="#" class="btn btn-primary stretched-link">Agregar al Carrito</a>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>

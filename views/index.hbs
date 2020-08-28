@@ -1,6 +1,6 @@
 <div class="container">
-  <!-- Header -->
 
+  <!-- Header -->
   <div class="container">
     <nav class="div d-flex justify-content-between mt-2 pb-1 border-bottom">
       <div class="box d-inline-block">
@@ -18,14 +18,19 @@
           </a>
         </div>
         <div class="">
-          <a class="btn btn-outline-dark p-1 m-1 header-link pl-3 pr-3" href="#">
+          <a class="btn btn-outline-dark p-1 m-1 header-link pl-3 pr-3" href="/user">
             INGRESAR
           </a>
         </div>
         <div class="">
-          <a class="d-inline-block pt-2 pb-2 pl-2 pr-2 header-link text-dark" href="#">
-            <i style="font-size: 1rem;" class="fas fa-bars"></i>
+          <a class="d-inline-block pt-2 pb-2 pl-2 pr-2 header-link dropdown-toggle togglemenu" data-toggle="dropdown" href="#">
+            <i style="font-size: 1rem;" class="fas fa-bars text-dark"></i>
           </a>
+          <div class="dropdown-menu">
+              <a class="dropdown-item header-link" href="#">Ofertas</a>
+              <a class="dropdown-item header-link" href="#">Contacto</a>
+              <a class="dropdown-item header-link" href="#">Pago Seguro</a>
+          </div>
         </div>
       </div>
     </nav>
@@ -36,20 +41,22 @@
     <div class="container">
       <div class="row pt-5">
         {{# each items }}
-        <div class="col-md-4 pt-2">
+        <div class="col-sm-6 col-md-4 pt-2">
           <div class="card mx-auto" style="width: 200px; min-height: 358.8px;">
             <div class="p-3" style="">
               <img class="card-img-top" src="{{ this.productImage }}" alt="img-polera">
             </div>
 
             <div class="card-body">
-              <h4 class="card-title">
-                {{ this.name }}
-              </h4>
-              <p class="card-text font-weight-bold">
-                ${{ this.price }}
-              </p>
-              <a href="#" class="btn btn-primary stretched-link">Agregar al Carrito</a>
+
+                <h4 class="card-title">
+                  {{ this.name }}
+                </h4>
+                <p class="card-text font-weight-bold">
+                  ${{ this.price }}
+                </p>
+
+              <a href="/webpay/{{this.price}}" class="btn btn-primary stretched-link">Agregar al Carrito</a>
             </div>
           </div>
         </div>
@@ -57,4 +64,5 @@
       </div>
     </div>
   </div>
+
 </div>

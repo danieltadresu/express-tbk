@@ -1,0 +1,22 @@
+<input type="text" class="form-control" id="userid" name="userid">
+<button class="btn btn-primary m-2" id="button">Get Result</button>
+
+<script>
+  document.getElementById('button').addEventListener('click', loadText);
+
+  function loadText() {
+    var input = userid.value;
+    console.log(input);
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+
+      if (this.readyState == 4 && this.status == 201) {
+        console.log('Creoque funciona?');
+      }
+    };
+
+    xhttp.open('POST', '/user/ajaxread/' + input, true);
+    xhttp.send();
+  }
+</script>

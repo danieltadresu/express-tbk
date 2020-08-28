@@ -11,3 +11,11 @@ a {
   font-size: .7rem;
   letter-spacing: 2px;
 }
+
+.togglemenu {
+  color: white;
+}
+
+.togglemenu:hover {
+  color: white;
+}

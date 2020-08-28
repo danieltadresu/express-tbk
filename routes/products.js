@@ -3,6 +3,7 @@ var router = express.Router();
 const multer = require('multer');
 var mongoose = require('mongoose');
 const Product = require('../models/product');
+const WebpayController = require('../controllers/webpayNormalController');
 
 const storage = multer.diskStorage({
   destination: function(req, file, cb) {
@@ -34,7 +35,6 @@ const upload = multer({
 router.get('/', function(req, res, next) {
 
   var savedProducts = [];
-
   Product.find()
   .exec()
   .then(products => {
@@ -65,5 +65,14 @@ router.post('/createproduct', upload.single('productImage'), function(req, res, 
     console.log(err);
   });
 });
+
+router.get('/webpay/:price', WebpayController.webpayPlusControllerInit);
+
+/*
+router.get('/webpay/:price', function(req, res,next) {
+  const price = req.params.price;
+  console.log(price);
+});
+*/
 
 module.exports = router;

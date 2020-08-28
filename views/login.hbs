@@ -10,8 +10,30 @@
       <input class="form-control" type="password" id="password" name="password">
     </div>
     <div class="form-group">
-      <button type="submit" name="button" class="btn btn-primary header-link">ENVIAR</button>
+      <!--
+      <button type="submit" onclick="createUser()" id="button" name="button" class="btn btn-primary header-link">ENVIAR</button>
+       -->
+       <button type="button" id="mybutton" name="mybutton" class="btn btn-primary">ENVIAR</button>
     </div>
   </form>
   </div>
 </div>
+
+<script>
+  document.getElementById('mybutton').addEventListener('click', loadsend);
+
+  function loadsend() {
+    var email = document.getElementById('email').value;
+    console.log(email);
+
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 201) {
+        console.log('User deleted');
+      }
+    };
+    xhttp.open('POST', '/user/ajaxread/' + email, true);
+    xhttp.send();
+  };
+</script>

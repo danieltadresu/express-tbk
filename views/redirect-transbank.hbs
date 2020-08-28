@@ -1,0 +1,8 @@
+<p> {{ url }} </p>
+<p> {{ token }} </p>
+<p> {{ inputName }} </p>
+
+<form id="webpay-form" action="{{ url }}" method="post">
+    <input type="hidden" name="{{ inputName }}" value="{{ token }}">
+    <input type="submit" name="" value="SEND">
+</form>

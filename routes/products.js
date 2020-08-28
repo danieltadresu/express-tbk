@@ -68,6 +68,8 @@ router.post('/createproduct', upload.single('productImage'), function(req, res, 
 
 router.get('/webpay/:price', WebpayController.webpayPlusControllerInit);
 
+router.post('/webpay-normal/response', WebpayController.webpayPlusControllerResponse);
+
 /*
 router.get('/webpay/:price', function(req, res,next) {
   const price = req.params.price;

@@ -8,26 +8,30 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/insert', function(req, res, next) {
-
   const user = new User({
     _id: new mongoose.Types.ObjectId(),
     email: req.body.email,
     password: req.body.password
   });
+  console.log(user);
 
-  user
-  .save()
-  .then(result => {
-    console.log(result);
-    res.status(201).json({
-         message: 'Handling POST requests to /products',
-         createdProduct: result
-     });
-  })
-  .catch(err => {
-    console.log(err);
-  });
+    user
+    .save()
+    .then(result => {
+      console.log(result);
+
+      res.status(201).json({
+           message: 'Handling POST requests to /products',
+           createdProduct: result
+       });
+
+    })
+    .catch(err => {
+      console.log(err);
+    });
 });
+
+/* Testing */
 
 router.get('/ajaxtest', function(req, res, next) {
   res.render('ajax')

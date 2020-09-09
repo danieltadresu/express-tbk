@@ -1,0 +1,16 @@
+/* Editing text */
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+.source-sans {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.margin-custom-xl {
+  margin: 9rem 0 9rem 0;
+}
+
+#navbar-brand:hover,
+#nav-link:hover {
+  color: #111324;
+}

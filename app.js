@@ -6,6 +6,9 @@ const express = require('express');
 
 const app = express();
 
+app.set('view engine', 'ejs');
+app.set('views', 'views');
+
 const shopHomeRouter = require('./routes/shop-home');
 const adminRouter = require('./routes/admin');
 
@@ -14,7 +17,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(shopHomeRouter);
-app.use('/admin', adminRouter);
+app.use('/admin', adminRouter.routes);
 
 // Get Error
 app.use((req, res, next) => {

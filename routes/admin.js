@@ -4,12 +4,18 @@ const express = require('express');
 
 const router = express.Router();
 
+const savedProducts = [];
+
 router.get('/', (req, res, next) => {
-  res.sendFile(path.join(__dirname, '../', 'views', 'add-product.html'));
+  res.render('add-product');
 });
 
 router.post('/add-product', (req, res, next) => {
-  console.log(req.body.title);
+  savedProducts.push({
+    title: req.body.title
+  });
+  res.redirect('/');
 });
 
-module.exports = router;
+exports.routes = router;
+exports.products = savedProducts;

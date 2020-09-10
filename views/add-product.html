@@ -10,7 +10,6 @@
   <body>
 
     <!-- Nav -->
-
       <nav class="navbar navbar-expand-lg navbar-light bg-light border">
         <a id="navbar-brand" class="navbar-brand source-sans" href="/">
           Wizard Shop
@@ -30,7 +29,6 @@
           </ul>
         </div>
       </nav>
-
     <!-- End Nav -->
 
     <div class="container-fluid margin-custom-xl">
@@ -39,12 +37,15 @@
           <div class="col-md-4 mx-auto">
             <div class="w-75 mx-auto">
             <main>
-              <form class="" action="" method="">
+              <form class="" action="/admin/add-product" method="POST">
+
                 <div class="form-group">
-                  <label class="source-sans" for="name">Nombre del producto:</label>
-                  <input type="text" class="form-control source-sans">
+                  <label class="source-sans" for="title">Nombre del producto:</label>
+                  <input type="text" name="title" id="title" class="form-control source-sans">
                 </div>
-                <button class="btn btn-outline-danger btn-block source-sans">Agregar</button>
+
+                <button type="submit" class="btn btn-outline-danger btn-block source-sans">Agregar</button>
+
               </form>
             </main>
           </div>
